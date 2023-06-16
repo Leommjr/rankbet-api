@@ -3,7 +3,7 @@ from typing import Optional, Tuple, Union
 from redis.asyncio.client import Redis
 from redis.asyncio.cluster import RedisCluster
 
-from fastapi_cache.types import Backend
+from ..types import Backend
 
 
 class RedisBackend(Backend):

@@ -27,9 +27,9 @@ from starlette.requests import Request
 from starlette.responses import Response
 from starlette.status import HTTP_304_NOT_MODIFIED
 
-from fastapi_cache import FastAPICache
-from fastapi_cache.coder import Coder
-from fastapi_cache.types import KeyBuilder
+from . import FastAPICache
+from .coder import Coder
+from .types import KeyBuilder
 
 logger: logging.Logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())

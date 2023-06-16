@@ -9,9 +9,9 @@ except ImportError:
     # Python 3.7
     from importlib_metadata import version  # type: ignore
 
-from fastapi_cache.coder import Coder, JsonCoder
-from fastapi_cache.key_builder import default_key_builder
-from fastapi_cache.types import Backend, KeyBuilder
+from .coder import Coder, JsonCoder
+from .key_builder import default_key_builder
+from .types import Backend, KeyBuilder
 
 __version__ = version("fastapi-cache2")  # pyright: ignore[reportUnknownVariableType]
 __all__ = [
