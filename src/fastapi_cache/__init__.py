@@ -13,7 +13,7 @@ from .coder import Coder, JsonCoder
 from .key_builder import default_key_builder
 from .types import Backend, KeyBuilder
 
-__version__ = version("fastapi-cache2")  # pyright: ignore[reportUnknownVariableType]
+
 __all__ = [
     "Backend",
     "Coder",
