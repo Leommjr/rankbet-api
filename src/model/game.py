@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 
 class Game(BaseModel):
+    betName: str
     title: str
     team1: str
     team2: str

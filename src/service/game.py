@@ -14,7 +14,7 @@ async def get_all_games() -> List[Game]:
         
         for game in games:
             try:
-                allGames.append(Game(title=game["title"], href=game["href"], team1=game['team1'], team2=game['team2'], win1=game['markets']["win1"]["v"], win2=game['markets']["win2"]["v"]))
+                allGames.append(Game(betName="1xbet", title=game["title"], href=game["href"], team1=game['team1'], team2=game['team2'], win1=game['markets']["win1"]["v"], win2=game['markets']["win2"]["v"]))
             except Exception as e:
                 continue
 
@@ -29,7 +29,7 @@ async def get_sbobet_games() -> List[Game]:
         
         for game in games:
             try:
-                sbobetGames.append(Game(title=game["title"], href=game["href"], team1=game['team1'], team2=game['team2'], win1=game['markets']["win1"], win2=game['markets']["win2"]))
+                sbobetGames.append(Game(betName="sbobet", title=game["title"], href=game["href"], team1=game['team1'], team2=game['team2'], win1=game['markets']["win1"], win2=game['markets']["win2"]))
             except Exception as e:
                 continue
 
@@ -52,7 +52,7 @@ async def get_pinnacle_games() -> List[Game]:
         
         for game in games["events"]:
             try:
-                pinnacleGames.append(Game(title=game["league_name"], href="https://www.pinnacle.com/pt/search/soccer/"+game["home"]+ "/participant/", team1=game['home'], team2=game['away'], win1=game['periods']['num_0']['money_line']['home'], win2=game['periods']['num_0']['money_line']['away']))
+                pinnacleGames.append(Game(betName="pinnacle", title=game["league_name"], href="https://www.pinnacle.com/pt/search/soccer/"+game["home"]+ "/participant/", team1=game['home'], team2=game['away'], win1=game['periods']['num_0']['money_line']['home'], win2=game['periods']['num_0']['money_line']['away']))
             except Exception as e:
                 continue
 
