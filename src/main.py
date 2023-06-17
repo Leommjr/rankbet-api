@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.encoders import jsonable_encoder
 from .fastapi_cache import FastAPICache
 from .fastapi_cache.backends.inmemory import InMemoryBackend
 from .fastapi_cache.decorator import cache
@@ -26,10 +27,10 @@ async def live():
     allGames = result
     if(len(result) == 0):
         if(len(allGames) == 0):
-            return {"games": []}
+            return jsonable_encoder([])
         else:
-            return {"games": allGames}
-    return {"games": result}
+            return jsonable_encoder(allGames)
+    return jsonable_encoder(result)
 
 
 
@@ -42,11 +43,10 @@ async def sbobet():
     sbobetGames = result
     if(len(result) == 0):
         if(len(sbobetGames) == 0):
-            return {"games": []}
+            return jsonable_encoder([])
         else:
-            return {"games": sbobetGames}
-    return {"games": result}
-
+            jsonable_encoder(sbobetGames)
+    return jsonable_encoder(result)
 @app.get("/pinnacle")
 @cache(namespace="pinnacle", expire=1800)
 async def pinnacle():
@@ -56,10 +56,10 @@ async def pinnacle():
     pinnacleGames = result
     if(len(result) == 0):
         if(len(pinnacleGames) == 0):
-            return {"games": []}
+            return jsonable_encoder([])
         else:
-            return {"games": pinnacleGames}
-    return {"games": result}
+            return  jsonable_encoder(pinnacleGames)
+    return jsonable_encoder(result)
 
 
 @app.on_event("startup")

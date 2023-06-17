@@ -1,13 +1,31 @@
-FROM python:3.10
+FROM python:3.9 as requirements-stage
 
+# 
+WORKDIR /tmp
+
+# 
 RUN pip install poetry
 
-WORKDIR /app
+# 
+COPY ./pyproject.toml ./poetry.lock* /tmp/
 
-COPY . /app
+# 
+RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-RUN poetry install
+# 
+FROM python:3.9
 
-RUN chmod +x entrypoint.sh
+# 
+WORKDIR /code
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+# 
+COPY --from=requirements-stage /tmp/requirements.txt /code/requirements.txt
+
+# 
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# 
+COPY ./src /code/app
+
+# 
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
