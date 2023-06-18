@@ -150,7 +150,7 @@ async def sbobet():
     return jsonable_encoder(result)
 
 @app.get("/pinnacle")
-@cache(namespace="pinnacle", expire=1800)
+@cache(namespace="pinnacle", expire=10)
 async def pinnacle():
     global pinnacleGames
     """Get all pinnacle games"""
@@ -164,7 +164,7 @@ async def pinnacle():
     return jsonable_encoder(result)
 
 @app.get("/premium1")
-@cache(namespace="premium1", expire=1800)
+@cache(namespace="premium1", expire=10)
 async def premium1(time: str, team1: str) -> H2h:
     """Get all premium1 games"""
     result = await premium.get_premium1_features(time, team1)
