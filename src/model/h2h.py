@@ -10,5 +10,7 @@ class H2h(BaseModel):
     team2: str
     win1: int
     win2: int
+    goals1: int
+    goals2: int
     draw: int
     matches: List[Match]

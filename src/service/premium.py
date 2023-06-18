@@ -44,7 +44,7 @@ async def get_h2h(match_uuid: str, team1: str, team2: str) -> H2h:
                     match_list.append(Match(score1=matches["fts_A"], score2=matches["fts_B"]))
                 else:
                     match_list.append(Match(score1=matches["fts_B"], score2=matches["fts_A"]))
-            return H2h(team1=team1, team2=team2, win1=match_data["data"]["h2h"]["team_A"]["win"], win2=match_data["data"]["h2h"]["team_B"]["win"], draw=match_data["data"]["h2h"]["draw"], matches=match_list)
+            return H2h(team1=team1, team2=team2, win1=match_data["data"]["h2h"]["team_A"]["win"], win2=match_data["data"]["h2h"]["team_B"]["win"], draw=match_data["data"]["h2h"]["draw"], goals1=match_data["data"]["h2h"]["team_A"]["goal_pro"], goals2=match_data["data"]["h2h"]["team_B"]["goal_pro"], matches=match_list)
 
                     
             

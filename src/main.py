@@ -24,7 +24,6 @@ fanduelGames: List[Game] = []
 
 @app.get("/live")
 @app.get("/1xbet")
-@cache(namespace="live", expire=10)
 async def live():
     global allGames
     """Get all live games"""
@@ -38,7 +37,6 @@ async def live():
     return jsonable_encoder(result)
 
 @app.get("/live2")
-@cache(namespace="live", expire=10)
 async def live():
     global allGames2
     """Get all live games"""
