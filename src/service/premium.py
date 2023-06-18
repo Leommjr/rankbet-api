@@ -7,7 +7,7 @@ import aiohttp
 async def get_premium1_features(time: str, team1: str) -> H2h:
     url = "https://soccerway-feed.p.rapidapi.com/v1/matches/list"
 
-    querystring = {"date":"2023-06-21"}
+    querystring = {"date":time}
 
     headers = {
 	    "X-RapidAPI-Key": "a19972d6fdmshb445e2aac46d55ap1dd417jsnc1b125eebcd1",
