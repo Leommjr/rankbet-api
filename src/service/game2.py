@@ -7,8 +7,8 @@ async def get_all_games() -> List[Game]:
     url = "https://odds.p.rapidapi.com/v4/sports/soccer/odds"
     querystring = {"regions":"us,uk,eu,au","oddsFormat":"decimal","markets":"h2h","dateFormat":"iso"}
     headers = {
-	    "X-RapidAPI-Key": "a19972d6fdmshb445e2aac46d55ap1dd417jsnc1b125eebcd1",
-	    "X-RapidAPI-Host": "odds.p.rapidapi.com"
+	"X-RapidAPI-Key": "68f38dd5acmshac010412e6c9869p111e6djsn055ac186febc",
+	"X-RapidAPI-Host": "odds.p.rapidapi.com"
     }
 
     async with aiohttp.ClientSession() as session:
@@ -27,8 +27,8 @@ async def get_all_games2() -> List[Game]:
     url = "https://odds.p.rapidapi.com/v4/sports/soccer/odds"
     querystring = {"regions":"us,uk,eu,au","oddsFormat":"decimal","markets":"h2h","dateFormat":"iso"}
     headers = {
-	    "X-RapidAPI-Key": "a19972d6fdmshb445e2aac46d55ap1dd417jsnc1b125eebcd1",
-	    "X-RapidAPI-Host": "odds.p.rapidapi.com"
+	"X-RapidAPI-Key": "68f38dd5acmshac010412e6c9869p111e6djsn055ac186febc",
+	"X-RapidAPI-Host": "odds.p.rapidapi.com"
     }
 
     async with aiohttp.ClientSession() as session:
