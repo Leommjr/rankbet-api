@@ -10,7 +10,7 @@ async def get_premium1_features(time: str, team1: str) -> H2h:
     querystring = {"date":time}
 
     headers = {
-	    "X-RapidAPI-Key": "a19972d6fdmshb445e2aac46d55ap1dd417jsnc1b125eebcd1",
+	    "X-RapidAPI-Key": "68f38dd5acmshac010412e6c9869p111e6djsn055ac186febc",
 	    "X-RapidAPI-Host": "soccerway-feed.p.rapidapi.com"
     }
     async with aiohttp.ClientSession() as session:
@@ -31,7 +31,7 @@ async def get_h2h(match_uuid: str, team1: str, team2: str) -> H2h:
     querystring = {"match_uuid": match_uuid}
 
     headers = {
-	    "X-RapidAPI-Key": "a19972d6fdmshb445e2aac46d55ap1dd417jsnc1b125eebcd1",
+	    "X-RapidAPI-Key": "68f38dd5acmshac010412e6c9869p111e6djsn055ac186febc",
 	    "X-RapidAPI-Host": "soccerway-feed.p.rapidapi.com"
     }
 
